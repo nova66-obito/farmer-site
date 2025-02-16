@@ -1,0 +1,837 @@
+@import url('https://fonts.googleapis.com/css?family=Kanit:900');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Ranchers", serif;
+    font-weight: 400;
+    font-style: normal;
+    scroll-behavior: smooth;
+}
+.overall{
+    text-transform: capitalize;
+    --prime:#f0e8e8;
+    --sec:#005a34;
+}
+/* animation for the box */
+.block1{
+    animation: move-side linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 35% ;
+}
+@keyframes move-side {
+    from{
+        opacity: 0;
+        transform:translateX(-500px)
+    }
+    to{
+        opacity: 1;
+       transform: translateX(0px);
+    }
+}
+.block{
+    animation: moves linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 35% ;
+}
+@keyframes moves {
+    from{
+        opacity: 0;
+        scale: 0.5;
+    }
+    to{
+        opacity: 1;
+        scale: 1;
+    }
+}
+nav{
+    display: flex;
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    height: 13vh;
+    z-index: 999;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--prime);
+    box-shadow: 0 5px 5px var(--sec);
+}
+.txt1
+{
+    display: flex;
+}
+.txt1 h1{
+    margin-top: 10px;
+    background-clip: text;
+    color: transparent;
+    background-attachment: fixed;
+    background-position: center;
+    background-image: url(https://img.freepik.com/free-vector/nature-dotted-background_1017-180.jpg?t=st=1737822639~exp=1737826239~hmac=80f66a71de3d340623fde279c3068bd4486e02a42b7fb5ea6ed066319b09bb7d&w=740);
+}
+.txt img{
+    width: 80px;
+    height: 80px;
+}
+.txt2 a{
+    text-decoration: none;
+    color: var(--sec);
+    padding: 5px 15px;
+    border-radius: 5px;
+    position: relative;
+}
+/* this for the hover effect on the links */
+.link{
+    position: relative;
+}
+.link span{
+    width:47px;
+    height: 20%;
+    left: 12px;
+    bottom:-10px;
+    background-color:var(--sec);
+    position:absolute;
+    transition: all 1s;
+}
+
+.link a:nth-child(2):hover~span{
+    left: 85px;
+
+}
+.link a:nth-child(3):hover~span{
+    left: 154px;
+}
+.link a:nth-child(4):hover~span{
+    left: 225px;
+}
+.link a:nth-child(5):hover~span{
+    left: 308px;
+}
+.txt2 a:hover{
+  background-color: var(--sec);
+  color: var(--prime);
+  transition: all 0.5s;
+  scale: 1.1;
+}
+.txt2 > input,label{
+    display: none !important;
+}
+input:checked~.link{
+    top: 70px;
+    opacity: 0.7;
+    color: var(--prime);
+    filter: blur(0px);
+    min-height: 50vh;  
+}
+/* this for the head */
+.cover-all{
+    display: flex;
+    flex-direction: column;
+}
+/* this for the first div in the content */
+header{
+    margin-top: 40px;
+    min-height: 95vh;
+    background-image: url(https://img.freepik.com/free-photo/community-people-working-together-agriculture-grow-food_23-2151205703.jpg?t=st=1737869412~exp=1737873012~hmac=62f038778970ab6544d3468105fb89a9cc1d9d92bfa5d98cd76af76a857ee49e&w=1060);
+    /* background-image: url(https://images.pexels.com/photos/13061060/pexels-photo-13061060.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2); */
+    background-position:center;
+    background-clip:fixed;
+    background-size:cover;
+    display: flex;
+    opacity: 0.9;
+    justify-content: center;
+    align-items: center;
+}
+.text-head{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.text-head h1{
+    font-size: 40px;
+    animation: move 2s 2 forwards;
+    font-style: oblique;
+    opacity: 0;
+    margin-bottom: 30px;
+    animation:  move 2s 1 forwards;
+    position: relative;
+    color: white;
+}
+.text-head h3{
+    margin: 10px 20px;
+    color: white;
+}
+.text-head h1::after{
+    content: "...!";
+}
+.text-head h1::before{
+    content: "";
+    width: 20%;
+    bottom: -10px;
+    left:38%;
+    background-color:green;
+    height: 5px;
+    position: absolute;
+    transition: all 2s;
+}
+.text-head:hover h1::before{
+   width: 100%;
+   left: 0;
+}
+@keyframes move{
+    from{
+        transition-duration: 1s;
+        opacity: 0;
+    }
+    to{
+        transform: scale(1.1);
+        opacity: 1;
+    }  
+}
+/* this for the button in the head */
+.text-head a{
+    text-decoration: none;
+    color: var(--sec);
+    padding: 10px 30px;
+    background-color: var(--prime);
+    text-align: center;
+    border-radius:20px 0px 20px 20px;
+    align-items: center;
+    transition: all 1s;
+    box-shadow:0px 4px rgb(19, 17, 17);
+    position: relative;
+    transform: translateY(0px);
+}
+.text-head a:hover{
+    transform: translateY(15px);
+    transition: all 1s;
+}
+.text-head a i{
+    margin-left: 3px;
+    margin-top: 2px;
+}
+/* this for the works */
+.about{
+    min-height: 100vh;
+    background: linear-gradient(to top,green 0%,white 50%);
+}
+.cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:100px;
+}
+.cont > div{
+    width: 50%;
+}
+.pic{
+  order: 1;
+  display: flex;
+  flex-direction: column-reverse;
+}
+.pic > img{
+    filter: drop-shadow(1px 3px);
+    animation: rot 5s infinite linear forwards;
+}
+@keyframes rot{
+    0%,40%{
+        transform: scaleX(-1);
+    }
+    50%,100%{
+        transform: scale(1);
+    }
+}
+.text{
+    font-size: 20px;
+    padding: 60px;
+}
+.text h2{
+  color: rgb(217, 48, 5);
+  text-decoration:underline;
+}
+.text button{
+    background-color: red;
+    text-transform: capitalize;
+    font-weight: bold;
+    color: white;
+    box-shadow: 0 5px black;
+}
+.text button:hover{
+    background-color: green;
+    color: var(--prime);
+}
+/* tips  style*/
+.tips{
+    min-height: 95vh;
+    padding: 50px;
+    background-color: var(--prime);
+}
+.tips > h1::before {
+       content: "------";
+       font-size: 25px;
+       margin:10px;
+}
+.tips > h1::after {
+    content: "------";
+    font-size: 25px;
+    margin:10px;
+}
+/* tips box */
+.cover-tips{
+    margin-top: 50px;
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.boxs{
+    width: 330px;
+    background-color:var(--sec);
+    min-height: 350px;
+    text-align: center;
+    padding: 40px;
+    color: var(--prime);
+    border-radius: 30px;
+}
+.boxs > img{
+    border-radius: 50%; 
+    padding: 2px;
+    border: 2px solid red;
+    width: 100px;
+    height: 100px;
+    animation: cricule 2s infinite;
+}
+.boxs > h3{
+    margin: 10px 0px;
+    text-decoration:underline red;
+}
+@keyframes cricule{
+    from{
+      opacity: 0;
+      transform: rotatey(360deg);
+    }
+    to{
+        opacity: 1;
+    }
+}
+.boxs > button{
+    background-color: red;
+    box-shadow: 0px 5px white;
+    border-radius: 10px 0px 10px 10px;
+    text-transform: capitalize;
+    color: white;
+}
+/* boxs hover */
+.boxs:hover{
+    transition: all 2s;
+    background-color:green;
+    box-shadow: 0 0 10px black;
+    transform:rotatex(360deg);
+}
+.boxs > button:hover{
+    background-color: black;
+    color: white;
+}
+/* services */
+.services{
+    padding: 50px;
+    min-height: 90vh;
+    background-image:linear-gradient(green 0%,white 50%);
+}
+.services > h1::after{
+    content: "-----";
+    margin-top: -5px;
+}
+.services > h1::before{
+    content: "-----";
+    margin-top: -5px;
+}
+/* ser-box */
+.services > .sub-ser{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+      position: relative;
+}
+.sub-ser > .ser-box{
+    width: 300px;
+    height: 400px;
+    background-color: var(--sec);
+    top: 0;
+    overflow: hidden;
+    position: relative;
+}
+/* image */
+.ser-box > .far-img > img{
+    width: 100%;
+    height: 400px;
+    border-radius: 0 0 20px 0;
+}
+.ser-box > .far-txt{
+    position: absolute;
+    bottom:0px;
+    padding: 15px;
+    text-align: center;
+    transform: translateY(164px);
+    color: white;
+}
+.far-txt > button{
+    background-color: red;
+    color:yellowgreen;
+    border-radius: 10px 0px 10px 10px ; 
+    box-shadow: 1px 5px white;
+} 
+.far-txt > h4{
+    text-decoration: underline;
+    color:var(--prime);
+}
+.far-txt > p{
+    opacity: 0;
+}
+/* this hover box inside the box */
+.ser-box:hover > .far-txt{
+    transform: translateY(0px);
+    transition: all 1s;
+}
+.ser-box:hover > .far-txt > p{
+    opacity: 1;
+}
+.ser-box:hover > .far-img > img{
+    height: 180px;
+    transition: all 1s;
+}
+/* business idea */
+.business{
+    min-height: 100vh;
+    background: var(--prime);
+}
+.business-cover{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    padding: 40px;
+}
+.business > h1::before{
+    content: "---";
+
+}
+.business > h1::after{
+    content: "---";
+
+}
+.business-cover > div{
+    width: 80%;
+    min-height: 50vh;
+    display: flex;
+    flex-wrap: wrap;   
+}
+.business-cover > .animals{
+    align-self: flex-start;
+}
+.business-cover > .plantes{
+   align-self: flex-end;
+}
+.business-cover > .fish{
+    align-self: flex-start;
+}
+/* for the texts plantes*/
+.def > .b-text{
+        width: 60%;
+        padding: 30px;
+}
+.def > .b-pic{
+    width: 40%;
+}
+.def > .b-pic > img{
+    width: 100%;
+    height: fit-content;
+
+}
+.def > .b-pic > h2{
+    text-align: center;
+}
+.b-text > button{
+    background-color: red;
+    border: 2px solid green;
+    text-transform: capitalize;
+    box-shadow: 0px 4px black;
+    color: white;
+}
+.b-text > p > i{
+    color: gold;
+    margin-right: 3px;
+}
+.b-text > h4{
+    color: red;
+    text-decoration: underline;
+}
+.business-cover > .furits
+{
+   align-self: flex-end;
+}
+/* contact */
+.contact{
+    background: linear-gradient(green 0%,white 50%);
+    min-height: 100vh;
+    padding: 50px;
+}
+/* cover-content */
+.contact > .cont-cover{
+    background-color: hsl(0, 0%, 100%,0.5);
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.cont-cover > div{
+    width: 50%;
+    min-height: 500px;
+}
+.cont-cover > .cont-form{
+    padding: 40px;
+}
+.cont-form  input{
+    border: none;
+    background-color:transparent;
+    outline: none !important;
+    border-bottom: 2px solid green;
+    color:red;
+}
+.cont-cover textarea{
+    border: none;
+    border: none;
+    background-color:transparent;
+    outline: none !important;
+    border-bottom: 2px solid green;
+}
+.cont-cover button{
+    background-color: red;
+    border: 1px solid green;
+    box-shadow: 1px 4px 3px black ;
+    text-transform: capitalize;
+    margin-top: 20px;
+}
+/* placeholder */
+::placeholder{
+    text-transform: capitalize;
+    color: black;
+}
+/* contact us */
+
+.icon > i{
+    margin-top: 15px;
+    color:green;
+    font-size: 30px;
+    display: flex;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+.icon > i:hover{
+  scale: 1.1;
+  color: red;
+}
+.map1{
+    position: relative;
+}
+.map1 > img{
+    top: 25%;
+    right: 50px;
+    position:absolute;    
+    animation: img-rot 3s infinite;
+}
+@keyframes img-rot{
+    from{
+        opacity: 0;
+        transform: rotatey(360deg);
+    }
+    to{
+        opacity:1;
+    }
+}
+.icon > i:hover{
+    color: green;
+}
+/* icon in the p */
+.map1 > p >i{
+    color: red;
+    font-size: 20px;
+    margin-right: 5px;
+}
+/* footer */
+footer{
+    background: var(--sec);
+    min-height: 30vh;
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+}
+footer > .end{
+   display: flex;
+   justify-content:center;
+   align-items: center;
+   padding: 10px;
+}
+.end > .e-box{
+   width:30%;
+   display: grid;
+   place-content: center;
+}
+.e-box > h3{
+    color: white;
+    text-decoration: underline;
+}
+.e-icon{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+.e-icon > i{
+    margin: 10px 0;
+    font-size: 40px;
+    text-align: center;
+    cursor: pointer;
+    color: white;
+}
+.e-icon >i:hover{
+    color:white;
+    text-shadow: 0 0 20px red;
+}
+.e-box1 > a{
+   text-decoration: none;
+   margin: 5px 0;
+   color: white;
+}
+.e-box1 > a:hover{
+    color: white;
+    text-decoration: underline;
+}
+.e-box3 > p > i{
+    margin-right:5px;
+    font-size: 25px;
+}
+.e-box > p{
+    color: white;
+}
+.e-box3 >p:hover{
+    text-decoration: underline;
+    color:white;
+    cursor: pointer;
+}
+@media only screen and (max-width:700px) and (min-width:200px){
+    /* this for the home */
+    nav{
+        padding: 11px;
+    }
+    .link{
+        transition: all 2s;
+        opacity: 0;
+        filter: blur(20px);
+        position: fixed;
+        width: 100%;
+        top:-380px;
+        left:0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px;
+        background-color:green;
+        gap: 20px;
+    }
+    .txt1 > h1{
+        margin-top: 30px;
+    }
+    .txt2 > label{
+       display: block !important;
+      font-size: 30px;
+    }
+    .link > span{
+        display: none;
+    }
+    .txt2 a{
+        color: #ffffff;
+        text-decoration: underline red;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    /* this for the head */
+    header{
+        width: 100%;
+    }
+    .text-head h1{
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    .text-head h3{
+        font-size: 11px;
+        margin-bottom: 10px;
+    }
+    .text-head a{
+        padding: 5px 15px;
+        font-size: 10px;
+
+    }
+    /* this for the about */
+    .cont{
+        flex-direction: column;
+        width: 100%;
+        padding:0 20px;
+    }
+    .cont > div{
+        width: 100%;
+    }
+    .text{
+        font-size: 10px;
+        padding: 20px;
+    }
+    /* tips */
+    .tips{
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+    }
+    .cover-tips{
+        margin-top: 10px;
+        gap: 20px;
+        justify-content: center;
+    }
+    .boxs{
+        padding: 25px;
+        width: 100%;
+    }
+    /* services */
+    .services{
+        padding: 20px;
+    }
+    .sub-ser > .ser-box{
+        width: 100%;
+    }
+    /* business */
+    .business-cover{
+        padding: 15px;
+    }
+    .def{
+        flex-direction: column;
+    }
+    .def > .b-pic{
+       width: 100%;
+    }
+    .def > .b-text{
+        width: 100%;
+        padding: 10px;
+        font-size: 15px;
+    }
+   /* contect */
+   .contact{
+    padding: 20px;
+   }
+.contact > .cont-cover{
+    flex-direction: column;
+}
+.map{
+    width: 100%;
+}
+.cont-form{
+    width: 100%;
+}
+.cont-cover > div{
+ width: 90%;
+}
+.map1 img{
+    display: none;
+}
+.cont-cover > .cont-form{
+  padding: 10px;
+}
+ /* footer */
+ footer >  .end{
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 70px;
+}
+.end > .e-box{
+    width: 100%;
+   place-content: start;
+}
+}
+/* this for the tablet view*/
+@media only screen and (max-width:900px) and (min-width:700px){
+  /* this for the header */
+  header{
+    width: 100%;
+    text-align: center;
+    height: 100vh;
+}
+.text-head h1{
+    font-size: 25px;
+}
+ /* this for the about */
+ .cont{
+    flex-direction: column;
+    width: 100%;
+}
+.cont > div{
+    width: 100%;
+}
+.text{
+    padding: 20px;
+}
+ /* tips */
+ .cover-tips{
+    margin-top: 10px;
+    gap: 20px;
+    justify-content: center;
+}
+.boxs{
+    width: 45%;
+}
+ /* footer */
+ footer > .end{
+    gap: 30px;
+}
+.end > .e-box{
+    width: 40%;
+}
+.e-icon > i{
+    font-size:30px ;
+}
+/* service */
+.services{
+    padding: 30px;
+}
+.sub-ser > .ser-box{
+    width: 45%;
+}
+.ser-box > .far-txt{
+    transform: translateY(120px);
+}
+/* business */
+.def{
+    flex-direction: column;
+}
+.def > .b-pic{
+   width: 90%;
+}
+.def > .b-text{
+    width: 90%;
+}
+/* contect */
+.contact > .cont-cover{
+    flex-direction: column;
+}
+.map{
+    width: 100%;
+}
+.cont-form{
+    width: 100%;
+}
+.cont-cover > div{
+ width: 100%;
+    
+}
+}
