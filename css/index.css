@@ -84,6 +84,9 @@ nav{
 .link{
     position: relative;
 }
+.link > label{
+    display: none;
+}
 .link span{
     width:47px;
     height: 20%;
@@ -93,19 +96,21 @@ nav{
     position:absolute;
     transition: all 1s;
 }
-
 .link a:nth-child(2):hover~span{
-    left: 85px;
+    left: 12px;
 
 }
 .link a:nth-child(3):hover~span{
-    left: 154px;
+    left: 85px;
 }
 .link a:nth-child(4):hover~span{
-    left: 225px;
+    left: 154px;
 }
 .link a:nth-child(5):hover~span{
-    left: 308px;
+    left: 225px;
+}
+.link a:nth-child(6):hover~span{
+    left: 305px;
 }
 .txt2 a:hover{
   background-color: var(--sec);
@@ -628,6 +633,10 @@ footer > .end{
     /* this for the home */
     nav{
         padding: 11px;
+    }
+    .link > label{
+        display: block;
+        font-size: 30px;
     }
     .link{
         transition: all 0.7s;
