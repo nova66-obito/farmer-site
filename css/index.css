@@ -226,6 +226,7 @@ header{
     justify-content: center;
     align-items: center;
     padding:100px;
+    gap: 20px;
 }
 .cont > div{
     width: 50%;
@@ -249,7 +250,7 @@ header{
 }
 .text{
     font-size: 20px;
-    padding: 60px;
+    padding: 20px;
 }
 .text h2{
   color: rgb(217, 48, 5);
@@ -532,15 +533,11 @@ header{
 
 .icon > i{
     margin-top: 15px;
-    color:green;
+    color:red;
     font-size: 30px;
     display: flex;
     cursor: pointer;
     margin-bottom: 20px;
-}
-.icon > i:hover{
-  scale: 1.1;
-  color: red;
 }
 .map1{
     position: relative;
